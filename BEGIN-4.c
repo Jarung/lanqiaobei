@@ -1,4 +1,4 @@
-入门训练 Fibonacci数列
+/*入门训练 Fibonacci数列
 问题描述
 Fibonacci数列的递推公式为：Fn=Fn-1+Fn-2，其中F1=F2=1。
 
@@ -20,4 +20,25 @@ Fibonacci数列的递推公式为：Fn=Fn-1+Fn-2，其中F1=F2=1。
 样例输出
 7704
 数据规模与约定
-1 <= n <= 1,000,000。
+1 <= n <= 1,000,000。*/
+#include<stdio.h>
+#include<stdlib.h>
+#include<conio.h>
+#define M 10007
+
+int main()
+{
+	long n=-1;
+	int a1=1,a2=1,sum=0,t,i;
+	do{
+    	scanf("%ld",&n);
+	}while(n<1||n>1000000);
+    for(i=1;i<=n;i++){
+    	sum=a1%M;
+    	t=a2;
+    	a2=(a1+a2)%M;
+    	a1=t;
+    }
+   	printf("%d",sum);
+   	return 0;
+}
