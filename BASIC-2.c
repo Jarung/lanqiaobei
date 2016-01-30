@@ -23,5 +23,22 @@
 
 int main()
 {
+	int a[5]={0};
+	int temp,times,i;
+	printf("00000\n");
+	for (times=1; times<=31; times++){
+		i=0;
+		a[i]+=1;
+		while (a[i]>=2){
+			temp = a[i]/2;
+			a[i] = a[i]%2;
+			i++;
+			a[i] = a[i]+temp;
+		}
+		for (i=4; i>=0; i--){
+			printf("%d",a[i]);
+		}
+		printf("\n");
+	}
 	return 0;
 }
